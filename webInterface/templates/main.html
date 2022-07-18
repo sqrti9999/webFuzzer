@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    {% block title_area %}{% endblock %}
+</head>
+<body>
+    <div id="navbar">
+        <a href="{{ url_for('crawl.crawler_index') }}">crawler | main</a>
+        {% block navbar_area %}
+        {% endblock %}
+    </div>
+    <hr />
+    <div id="content">
+        {% block content_area %}{% endblock %}
+    </div>
+
+</body>
+</html>

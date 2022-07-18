@@ -1,0 +1,28 @@
+{% extends 'crawler/main.html' %}
+
+{% block content_area %}
+    {% if subject %}
+        <h1>result  - {{ subject }}</h1>
+    {% else %}
+        <title>result</title>
+    {% endif %}
+
+    {% if results %}
+        <table>
+            <tr>
+                <th>Request ID</th>
+                <th>Request URL</th>
+                <th>Result</th>
+            </tr>
+        {% for result in results %}
+            <tr>
+                <td>{{ result.id }}</td>
+                <td>{{ result.url }}</td>
+                <td>{{ result.vector }}</td>
+            </tr>
+        {% endfor %}
+        </table>
+    {% else %}
+        <h1> {{ errormsg }} </h1>
+    {% endif %}
+{% endblock %}

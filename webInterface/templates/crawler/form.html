@@ -1,0 +1,9 @@
+{% extends 'crawler/main.html' %}
+
+{% block content_area %}
+<form method="post" action="{{ target }}" >
+    {% for element in content %}
+        <input type="{{ element.type }}" name="{{ element.name }}" placeholder="{{ element.placeholder }}"><br />
+    {% endfor %}
+</form>
+{% endblock %}

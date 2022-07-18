@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+{% block title_area %}
+    {% if title %}
+        <title>crawler  - {{ title }}</title>
+    {% else %}
+        <title>crawler</title>
+    {% endif %}
+{% endblock %}
+
+{% block navbar_area %}
+<a href="{{ url_for('index') }}">main</a>
+<a href="{{ url_for('crawl.run_crawler_get') }}">run spider</a>
+<a href="{{ url_for('crawl.crawler_find_input_vector_get') }}">search for input</a>
+<a href="{{ url_for('crawl.crawler_status_get') }}">crawler status</a>
+{% endblock %}
+
+{% block content_area %}
+{{ content|safe }}
+{% endblock %}
